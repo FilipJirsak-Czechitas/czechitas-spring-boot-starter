@@ -1,6 +1,10 @@
 plugins {
     `java-library`
+    `maven-publish`
 }
+
+group = "dev.czechitas.java2"
+version = "0.9.0"
 
 repositories {
     mavenCentral()
@@ -8,8 +12,15 @@ repositories {
 
 dependencies {
     implementation("org.springframework:spring-context:6.0.11")
+    implementation("org.springframework:spring-context-support:6.0.11")
     implementation("org.springframework:spring-webmvc:6.0.11")
     implementation("org.freemarker:freemarker:2.3.32")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
 }
 
 testing {
@@ -20,8 +31,21 @@ testing {
     }
 }
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/FilipJirsak-Czechitas/spring-freemarker-extension")
+            credentials {
+                username = project.findProperty("gpr.user") as String?
+                password = project.findProperty("gpr.key") as String?
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
     }
 }
+
