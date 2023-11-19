@@ -7,9 +7,11 @@ import freemarker.template.Version;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 @AutoConfiguration
+@Import(CreateURL.class)
 public class FreemarkerConfig implements BeanPostProcessor {
 
   private final CreateURL createURL;
