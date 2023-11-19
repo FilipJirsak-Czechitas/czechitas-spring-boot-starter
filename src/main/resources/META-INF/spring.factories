@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  dev.czechitas.java.spring.freemarker.spring.FreemarkerConfig

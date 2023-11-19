@@ -1,1 +1,1 @@
-rootProject.name = "spring-freemarker-extension"
+rootProject.name = "czechitas-spring-boot-starter"
