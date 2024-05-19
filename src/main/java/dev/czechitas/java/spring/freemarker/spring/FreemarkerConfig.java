@@ -35,7 +35,7 @@ public class FreemarkerConfig implements BeanPostProcessor {
   private static class Java17ObjectWrapperConfiguration extends DefaultObjectWrapperConfiguration {
     protected Java17ObjectWrapperConfiguration(Version incompatibleImprovements) {
       super(incompatibleImprovements);
-//      setIterableSupport(true);
+      setIterableSupport(true);
     }
   }
 }
