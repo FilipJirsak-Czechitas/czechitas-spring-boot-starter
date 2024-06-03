@@ -8,6 +8,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 @AutoConfiguration
@@ -16,6 +17,7 @@ public class FreemarkerConfig implements BeanPostProcessor {
 
   private final CreateURL createURL;
 
+  @Lazy
   public FreemarkerConfig(CreateURL createURL) {
     this.createURL = createURL;
   }
