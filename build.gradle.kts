@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "dev.czechitas.java2"
-version = "0.9.8"
+version = "0.9.9"
 
 repositories {
     mavenCentral()
